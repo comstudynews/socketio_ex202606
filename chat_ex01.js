@@ -12,6 +12,7 @@ module.exports = function(server) {
         console.log('connection ... ');
         
         io.sockets.emit('this', {will:'be received by everyone'});
+        io.sockets.emit('news', {will:'이것은 서버에서 보낸 뉴스!'});
         
         socket.on('private  message', function(from, msg) {
             console.log('I received a private message by', from, 'saying', msg);
